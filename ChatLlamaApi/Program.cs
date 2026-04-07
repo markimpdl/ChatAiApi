@@ -1,16 +1,24 @@
+using ChatLlamaApi.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddHttpClient();
+
+builder.Services.AddHttpClient("OpenRouter", (sp, client) =>
+{
+    var config = sp.GetRequiredService<IConfiguration>();
+    client.BaseAddress = new Uri("https://openrouter.ai/api/v1/");
+    client.DefaultRequestHeaders.Add("Authorization", $"Bearer {config["OpenRouter:ApiKey"]}");
+    client.DefaultRequestHeaders.Add("HTTP-Referer", config["OpenRouter:Referer"] ?? "http://localhost");
+    client.DefaultRequestHeaders.Add("X-Title", config["OpenRouter:AppTitle"] ?? "ChatAIApi");
+});
+
+builder.Services.AddScoped<IOpenRouterService, OpenRouterService>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -18,11 +26,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseCors(policy => policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
-
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();
