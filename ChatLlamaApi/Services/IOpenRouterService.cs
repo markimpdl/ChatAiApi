@@ -1,6 +1,6 @@
-using ChatLlamaApi.Models;
+using ChatAIApi.Models;
 
-namespace ChatLlamaApi.Services
+namespace ChatAIApi.Services
 {
     public interface IOpenRouterService
     {

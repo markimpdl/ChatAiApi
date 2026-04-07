@@ -1,9 +1,9 @@
-using ChatLlamaApi.Models;
+using ChatAIApi.Models;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace ChatLlamaApi.Services
+namespace ChatAIApi.Services
 {
     public class OpenRouterService : IOpenRouterService
     {

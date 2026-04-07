@@ -1,4 +1,4 @@
-namespace ChatLlamaApi.Models
+namespace ChatAIApi.Models
 {
     public class QuestionRequest
     {

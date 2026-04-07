@@ -1,4 +1,4 @@
-using ChatLlamaApi.Services;
+using ChatAIApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

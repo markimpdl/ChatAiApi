@@ -1,9 +1,9 @@
-using ChatLlamaApi.Models;
-using ChatLlamaApi.Services;
+using ChatAIApi.Models;
+using ChatAIApi.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
-namespace ChatLlamaApi.Controllers
+namespace ChatAIApi.Controllers
 {
     /// <summary>
     /// Handles AI chat completions via OpenRouter.
