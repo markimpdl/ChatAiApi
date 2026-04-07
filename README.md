@@ -22,7 +22,7 @@ Built as a portfolio project to demonstrate clean architecture in a real-world A
 ## Project Structure
 
 ```
-ChatLlamaApi/          ← physical folder (rename to ChatAIApi in VS)
+ChatLAiApi/
 ├── Controllers/
 │   └── ChatAiController.cs
 ├── Models/
@@ -74,7 +74,7 @@ export OpenRouter__ApiKey="sk-or-..."
 ### 3. Run
 
 ```bash
-cd ChatLlamaApi
+cd ChatLAiApi
 dotnet run
 ```
 

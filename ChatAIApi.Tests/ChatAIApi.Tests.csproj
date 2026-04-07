@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ChatLlamaApi\ChatAIApi.csproj" />
+    <ProjectReference Include="..\ChatLAiApi\ChatAIApi.csproj" />
   </ItemGroup>
 
 </Project>

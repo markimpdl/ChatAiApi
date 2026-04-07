@@ -60,7 +60,7 @@ namespace ChatAIApi.Services
             }
 
             var parsed = JsonSerializer.Deserialize<OpenAiResponse>(resultString, _jsonOptions);
-            return parsed?.Choices?[0]?.Message?.Content;
+            return parsed?.Choices?.FirstOrDefault()?.Message?.Content;
         }
     }
 }
