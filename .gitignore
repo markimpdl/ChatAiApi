@@ -53,5 +53,4 @@ CodeCoverage/
 TestResult.xml
 nunit-*.xml
 /.vs
-/ChatLlamaApi/.vs/ChatLlamaApi
-/ChatLlamaApi/appsettings.Development.json
+**/appsettings.Development.json
