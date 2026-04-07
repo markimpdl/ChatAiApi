@@ -5,6 +5,9 @@ using System.Net;
 
 namespace ChatLlamaApi.Controllers
 {
+    /// <summary>
+    /// Handles AI chat completions via OpenRouter.
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class ChatAiController : ControllerBase
@@ -16,6 +19,13 @@ namespace ChatLlamaApi.Controllers
             _openRouterService = openRouterService;
         }
 
+        /// <summary>
+        /// Sends a question to the AI model and returns the answer.
+        /// Optionally accepts conversation history for multi-turn context.
+        /// </summary>
+        /// <param name="request">The question and optional conversation history.</param>
+        /// <param name="cancellationToken">Cancellation token (injected by ASP.NET Core).</param>
+        /// <returns>The AI-generated answer.</returns>
         [HttpPost]
         [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(object), StatusCodes.Status400BadRequest)]
