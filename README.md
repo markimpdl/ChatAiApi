@@ -4,6 +4,8 @@ A minimal ASP.NET Core 8 Web API that exposes an AI chat endpoint backed by [Ope
 
 Built as a portfolio project to demonstrate clean architecture in a real-world AI integration.
 
+> **Frontend:** The Angular frontend for this project is available at [markimpdl/ChatAiFront](https://github.com/markimpdl/ChatAiFront).
+
 ---
 
 ## Features
